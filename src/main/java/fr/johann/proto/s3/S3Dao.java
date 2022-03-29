@@ -98,7 +98,7 @@ public class S3Dao {
      * @param nomFichier Nomfichier à stocker
      * @param pMeta Metadonnée associé à l'objet
      */
-    void putObjectAsString(String pCle, String nomFichier,ObjectMetadata pMeta) {
+    void putObjectAsFile(String pCle, String nomFichier,ObjectMetadata pMeta) {
         PutObjectRequest request = new PutObjectRequest(bucketName, pCle, new File(nomFichier));
         request.setMetadata(pMeta);
         connexionS3.putObject(request);
